@@ -7,6 +7,8 @@ public class HandGrab : MonoBehaviour {
 	public List<Transform> itemsInReach = new List<Transform>();
 	public List<Transform> heldItems = new List<Transform>();
 	
+	public LayerMask[] ungrabbable;
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -45,21 +47,26 @@ public class HandGrab : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter(Collider trigger)
+	void OnTriggerEnter(Collider other)
 	{
-		if(trigger.CompareTag ("GrabTrigger"))
+		if(!itemsInReach.Contains (other.transform) && other.rigidbody != null && !other.rigidbody.isKinematic)
 		{
-			itemsInReach.Add (trigger.transform.parent);
-			Debug.Log("ADDING");
+			foreach(LayerMask mask in ungrabbable)
+			{
+				int maskVal = mask.value;
+				int layerPowd = (1 << other.gameObject.layer);
+				if(mask.value == layerPowd)
+				{
+					return;
+				}
+			}
+			
+			itemsInReach.Add (other.transform);
 		}
 	}
 	
-	void OnTriggerExit(Collider trigger)
+	void OnTriggerExit(Collider other)
 	{
-		if(trigger.CompareTag("GrabTrigger"))
-		{
-			itemsInReach.Remove(trigger.transform.parent);
-			Debug.Log ("REMOVING");
-		}
+		itemsInReach.Remove (other.transform);
 	}
 }
