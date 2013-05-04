@@ -23,7 +23,6 @@ function Update () {
 
 	plugin._sixenseGetNewestData(id);
 
-	/*
 //WALKING	
 	//walk forward------------------------------------------------------------------------------------------------
 	if(joystickLeftY > 127){
@@ -53,6 +52,5 @@ function Update () {
 	
 	if(joystickRightX < 127){
 		transform.RotateAround(transform.position, Vector3.up * -1, (turnSpeed + ((127 - joystickRightX ) * turnSpeedAdjust)));
-	}
-	*/
+	}		
 }

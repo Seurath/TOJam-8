@@ -3,5 +3,5 @@
 var tracker : GameObject;
 function Update () {
 	
-	transform.localEulerAngles.x = tracker.transform.eulerAngles.z;
+	transform.localEulerAngles.y = tracker.transform.eulerAngles.z;
 }
