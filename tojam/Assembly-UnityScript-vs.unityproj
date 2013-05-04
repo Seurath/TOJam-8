@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -48,7 +48,7 @@
      <Compile Include="Assets\IK\Scripts\ik\Old Scripts (Outdated)\ikLimb.js" />
      <Compile Include="Assets\Scripts\AnimatedTexture.js" />
      <Compile Include="Assets\Scripts\foreArms.js" />
-     <Compile Include="Assets\Scripts\player.js" />
+     <Compile Include="Assets\Scripts\playerJS.js" />
      <Compile Include="Assets\Scripts\playerRoot.js" />
      <Compile Include="Assets\Scripts\tempHand.js" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\cubeShader.shader" />
