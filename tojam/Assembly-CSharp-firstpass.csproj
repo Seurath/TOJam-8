@@ -37,26 +37,26 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugins\RazerHydraPlugin.cs" />
+     <None Include="Assets\OVR\OVRImageEffects\OVRLensCorrection_CA.shader" />
+     <None Include="Assets\Fonts\tr2n\License.txt" />
      <None Include="Assets\Fonts\tr2n\Readme.txt" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\shadowShader.shader" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\encodeShader.shader" />
-     <None Include="Assets\OVR\OVRImageEffects\OVRLensCorrection_CA_old.shader" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\cubeShader.shader" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\gaussBlur.shader" />
      <None Include="Assets\Plugins\MITLicense_XInputInterfaceDLL.txt" />
-     <None Include="Assets\OVR\OVRImageEffects\OVRLensCorrection_CA.shader" />
      <None Include="Assets\Graphic Power-Up\RealtimeCubemap\Components\quadShader.shader" />
      <None Include="Assets\Graphic Power-Up\PostProcessing\PostProcessing.shader" />
+     <None Include="Assets\OVR\OVRImageEffects\OVRLensCorrection_CA_old.shader" />
      <None Include="Assets\Plugins\MITLicense_XInputDotNetPureDLL.txt" />
-     <None Include="Assets\Fonts\tr2n\License.txt" />
      <None Include="Assets\OVR\OVRImageEffects\OVRLensCorrection.shader" />
  <Reference Include="XInputDotNetPure">
  <HintPath>Assets\Plugins\XInputDotNetPure.dll</HintPath>
