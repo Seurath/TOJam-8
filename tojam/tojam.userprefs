@@ -1,18 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OVR\Scripts\OVRCameraController.cs">
-    <Files>
-      <File FileName="..\..\UnityTest\UnityTest\Assets\Player\SimpleWASD_MouseLook.cs" Line="55" Column="3" />
-      <File FileName="Assets\Scripts\PunchPlayer.cs" Line="40" Column="54" />
-      <File FileName="Assets\Scripts\Hand.cs" Line="1" Column="1" />
-      <File FileName="Assets\OVR\Scripts\OVRCameraController.cs" Line="194" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

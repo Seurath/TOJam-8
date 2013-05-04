@@ -5,3 +5,5 @@
 .DS_Store
 /tojam/tojam-csharp.sln
 /tojam/tojam.sln
+tojam/Assembly-CSharp-Editor.pidb
+tojam/Assembly-CSharp-firstpass.pidb
