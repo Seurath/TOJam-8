@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DestructibleWall : MonoBehaviour {
 	public WallBrick brickType;
-	public Vector2 wallSize = new Vector2(5.0f, 2.0f);
+//	public Vector2 wallSize = new Vector2(5.0f, 2.0f);
 	
 	private WallBrick[,] bricks;
 	private int numBricksX;
@@ -21,11 +21,16 @@ public class DestructibleWall : MonoBehaviour {
 			return;
 		}
 		
-		numBricksX = Mathf.RoundToInt(wallSize.x / brickType.transform.localScale.x);
-		numBricksY = Mathf.RoundToInt(wallSize.y / brickType.transform.localScale.y);
+		renderer.enabled = false;
+		
+		numBricksX = Mathf.RoundToInt(transform.localScale.x / brickType.transform.localScale.x);
+		numBricksY = Mathf.RoundToInt(transform.localScale.y / brickType.transform.localScale.y);
 		bricks = new WallBrick[numBricksX, numBricksY];
 		float objectHeight = brickType.transform.localScale.y;
 		float objectWidth = brickType.transform.localScale.x;
+		
+		float offsetX = transform.localScale.x / 2.0f;
+		float offsetY = transform.localScale.y / 2.0f;
 		
 		bool evenY = true;
 		for(int y = 0; y < numBricksY; ++y)
@@ -38,14 +43,14 @@ public class DestructibleWall : MonoBehaviour {
 				{
 					widthSoFar += objectWidth / 2.0f;
 				}
-				Vector3 brickPosition = transform.position + transform.TransformDirection(new Vector3(widthSoFar + (objectWidth / 2.0f), heightSoFar + (objectHeight / 2.0f), 0.0f));
+				Vector3 brickPosition = transform.position + transform.TransformDirection(new Vector3(widthSoFar - offsetX + (objectWidth / 2.0f), heightSoFar - offsetY + (objectHeight / 2.0f), 0.0f));
 				bricks[x, y] = (WallBrick)Instantiate (brickType, brickPosition, transform.rotation);
 				bricks[x, y].SetWall (this);
 			}
 			evenY = !evenY;
 		}
 		
-		if(weakBrickX >= 0 && weakBrickY >= 0)
+		if(weakBrickX >= 0 && weakBrickY >= 0 && weakBrickX < numBricksX && weakBrickY < numBricksY)
 		{
 			bricks[weakBrickX, weakBrickY].SetIsWeak (true);
 		}
