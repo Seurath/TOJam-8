@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src\plane\PlaneBullet.cs">
+    <Files>
+      <File FileName="Assets\src\plane\PlaneController.cs" Line="1" Column="1" />
+      <File FileName="Assets\SixenseInput\Scripts\SixensePlugin.cs" Line="1" Column="1" />
+      <File FileName="Assets\SixenseInput\Scripts\SixenseInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\plane\PlaneBullet.cs" Line="28" Column="1" />
+      <File FileName="Assets\src\plane\DestroyAfterTime.cs" Line="14" Column="40" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
