@@ -87,6 +87,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400010}
+  m_Layer: 0
+  m_Name: BulletSpawnLocator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -133,6 +148,7 @@ Transform:
   m_Children:
   - {fileID: 400002}
   - {fileID: 400000}
+  - {fileID: 400010}
   - {fileID: 400004}
   m_Father: {fileID: 0}
 --- !u!4 &400008
@@ -146,6 +162,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .336263657, y: .0917112827, z: 2.56558013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400006}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -231,7 +258,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 5
   m_Drag: .600000024
   m_AngularDrag: 10
   m_UseGravity: 0
@@ -259,7 +286,7 @@ BoxCollider:
   m_GameObject: {fileID: 100004}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -287,12 +314,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3aedaf87d8dadf4595a398694166db5, type: 3}
   m_Name: 
-  Thrust: 30
+  Thrust: 40
   liftStrength: 0
-  rollRate: -60
+  rollRate: -40
   pitchRate: 50
-  turnTorque: .150000006
-  yawRate: 20
+  turnTorque: .5
+  yawRate: 0
+  reorientRate: 10
   horizontalAxis: 0
   verticalAxis: 0
   yawAxis: 0
@@ -302,6 +330,9 @@ MonoBehaviour:
   pitchUpperLimit: 15
   rollLowerLimit: 0
   rollUpperLimit: 0
+  bulletPrefab: {fileID: 100000, guid: eabe74f788150c94b8829a262e063c46, type: 2}
+  bulletSpawn: {fileID: 100010}
+  timeSinceLastSpawn: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
