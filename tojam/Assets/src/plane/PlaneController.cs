@@ -27,7 +27,9 @@ public class PlaneController : MonoBehaviour
 	
 	public GameObject bulletPrefab;
 	public GameObject bulletSpawn;
-	public float timeSinceLastSpawn = 1f;
+	public float timeSinceLastSpawn = 0.25f;
+	
+	public GameObject tiltObject;
 	
 	// Use this for initialization
 	void Start ()
@@ -39,10 +41,10 @@ public class PlaneController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		horizontalAxis = SixenseInput.Controllers[0].Rotation.z;
+		horizontalAxis = SixenseInput.Controllers[0].Rotation.y;
 		verticalAxis = SixenseInput.Controllers[0].Rotation.x;
 		
-		yawAxis = SixenseInput.Controllers[0].Rotation.y;
+		yawAxis = SixenseInput.Controllers[0].Rotation.z;
 		
 		
 		
@@ -75,13 +77,14 @@ public class PlaneController : MonoBehaviour
 		Quaternion level = Quaternion.Euler(new Vector3(this.transform.localRotation.eulerAngles.x,this.transform.localRotation.eulerAngles.y , 0));
 		this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, level, reorientRate * Time.deltaTime);			
 		
-		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 1f)
+		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 0.25f)
 		{
 			timeSinceLastSpawn = 0f;
 			GameObject bullet = GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
 
 		}
 		
+		tiltObject.transform.localRotation = Quaternion.Euler(new Vector3(0,0, -yawAxis * yawRate * 0.1f));
 		
 		
 	}

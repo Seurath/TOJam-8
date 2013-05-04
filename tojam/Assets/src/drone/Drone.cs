@@ -16,7 +16,7 @@ public class Drone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		Vector3 targetDirection =   this.target.transform.position - this.transform.position;
+		Vector3 targetDirection =  this.target.transform.position - this.transform.position;
 		Quaternion targetAngle = Quaternion.LookRotation(targetDirection);
 		
 		Quaternion resultDirection = Quaternion.RotateTowards(this.transform.rotation, targetAngle, Time.deltaTime * rotationRate);

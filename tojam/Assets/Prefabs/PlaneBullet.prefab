@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   speed: 300
   explosion: {fileID: 100000, guid: 6e6ac80ec50b7404987938d5edd2658d, type: 2}
+  kill: {fileID: 100000, guid: 893a694b772ffe643ab86fc8ea53fe8d, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
