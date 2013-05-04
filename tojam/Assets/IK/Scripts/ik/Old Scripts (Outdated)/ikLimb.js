@@ -38,7 +38,7 @@ function CalculateIK(){
 	targetDistance = Mathf.Min(targetDistance, armLength - 0.0001); //Do not allow target distance be further away than the arm's length.
 	//var adjacent : float = (targetDistance * hypotenuse) / armLength;
 	var adjacent : float = (Mathf.Pow(hypotenuse,2) - Mathf.Pow(forearmLength,2) + Mathf.Pow(targetDistance,2))/(2*targetDistance);
-	//Debug.Log(adjacent);
+//	Debug.Log(adjacent);
 	var ikAngle : float = Mathf.Acos(adjacent/hypotenuse) * Mathf.Rad2Deg;
 	//Store pre-ik info.
 	var targetPosition : Vector3 = target.position;
