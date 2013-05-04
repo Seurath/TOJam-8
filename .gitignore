@@ -1,2 +1,5 @@
 /tojam/Assembly-CSharp-vs.csproj
 /tojam/Assembly-CSharp.csproj
+/tojam/Library/
+/tojam/Temp/
+.DS_Store
