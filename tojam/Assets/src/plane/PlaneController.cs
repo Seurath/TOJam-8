@@ -38,6 +38,8 @@ public class PlaneController : MonoBehaviour
 	
 	private float tiltFix;
 	
+	public float fixOrientSpeed = 10f;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -95,7 +97,7 @@ public class PlaneController : MonoBehaviour
 		Quaternion level = Quaternion.Euler(new Vector3(this.transform.localRotation.eulerAngles.x,this.transform.localRotation.eulerAngles.y , 0));
 		this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, level, reorientRate * Time.deltaTime);			
 		
-		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 0.25f)
+		if ((SixenseInput.Controllers[0].GetButton(SixenseButtons.FOUR) || SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER)) && timeSinceLastSpawn > 0.25f)
 		{
 			timeSinceLastSpawn = 0f;
 			GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
@@ -105,6 +107,12 @@ public class PlaneController : MonoBehaviour
 		
 		tiltObject.transform.localRotation = Quaternion.Euler(new Vector3(0,0, -yawAxis * yawRate * 0.1f));
 		
+		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.BUMPER))
+		{
+			level = Quaternion.Euler(0,0,0);
+			this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, level, fixOrientSpeed * Time.deltaTime);			
+		
+		}
 		
 	}
 }

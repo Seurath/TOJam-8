@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - 
   - Fist
+  - 
   - GrabTrigger
   - 
   Builtin Layer 0: Default
@@ -14,7 +16,7 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: QuitHittingYourself
+  User Layer 8: hallway
   User Layer 9: fighter
   User Layer 10: 
   User Layer 11: 
