@@ -40,6 +40,9 @@ public class PlaneController : MonoBehaviour
 	
 	public float fixOrientSpeed = 10f;
 	
+	public GameObject leftHand;
+	public GameObject rightHand;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -65,6 +68,10 @@ public class PlaneController : MonoBehaviour
 			tiltFix = SixenseInput.Controllers[0].JoystickX;
 			
 		}
+		
+		
+		leftHand.transform.localRotation = Quaternion.Euler(new Vector3(verticalAxis * 30f, 0f, horizontalAxis * 100f));
+		rightHand.transform.localRotation = Quaternion.Euler(new Vector3(verticalAxis * 30f, 0f, horizontalAxis * 100f));
 		
 		
 		leftY = SixenseInput.Controllers[0].Position.y;
