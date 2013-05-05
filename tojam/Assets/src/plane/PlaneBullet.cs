@@ -24,12 +24,12 @@ public class PlaneBullet : MonoBehaviour {
 		Drone myDrone = other.gameObject.GetComponentInChildren<Drone>();		
 		if (myDrone != null)
 		{
-			Debug.Log("HIT DRONE");	
+			//Debug.Log("HIT DRONE");	
 			GameObject.Instantiate(kill, this.transform.position, this.transform.rotation);
 			Destroy(other.gameObject);
 		}
 		
-		Debug.Log("COLLISION ENTER");
+		//Debug.Log("COLLISION ENTER");
 		GameObject.Instantiate(explosion, this.transform.position, this.transform.rotation);
 		Destroy(this.gameObject);
 	}
