@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlaneController : MonoBehaviour
 {
+	[SerializeField] private PlaneAudioController audioController;
+	
 	public bool xboxMode;
 	
 	public float Thrust = 10f;
@@ -66,9 +68,9 @@ public class PlaneController : MonoBehaviour
 			yawAxis = SixenseInput.Controllers[0].Rotation.z;
 			throttle = SixenseInput.Controllers[0].JoystickY;			
 			tiltFix = SixenseInput.Controllers[0].JoystickX;
-			
 		}
 		
+		this.audioController.PlayEngineSound(throttle > 0);
 		
 		leftHand.transform.localRotation = Quaternion.Euler(new Vector3(verticalAxis * 30f, 0f, horizontalAxis * 100f));
 		rightHand.transform.localRotation = Quaternion.Euler(new Vector3(verticalAxis * 30f, 0f, horizontalAxis * 100f));
@@ -109,7 +111,8 @@ public class PlaneController : MonoBehaviour
 			timeSinceLastSpawn = 0f;
 			GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
 			GameObject.Instantiate(bulletPrefab, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
-
+			
+			this.audioController.PlayBulletSound();
 		}
 		
 		tiltObject.transform.localRotation = Quaternion.Euler(new Vector3(0,0, -yawAxis * yawRate * 0.1f));
