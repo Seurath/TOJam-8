@@ -277,7 +277,6 @@ GameObject:
   - 4: {fileID: 400032}
   - 33: {fileID: 3300010}
   - 23: {fileID: 2300010}
-  - 114: {fileID: 11400024}
   - 114: {fileID: 11400004}
   - 143: {fileID: 14300000}
   m_Layer: 8
@@ -3337,25 +3336,6 @@ MonoBehaviour:
   wrist: {fileID: 0}
   posMarker: {fileID: 0}
   playerScript: {fileID: 0}
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d9eb95ff73c5b458896684f586fb06, type: 3}
-  m_Name: 
-  id: 0
-  joystickRightX: 0
-  joystickRightY: 0
-  joystickLeftX: 0
-  joystickLeftY: 0
-  speed: 10
-  speedAdjust: 0
-  turnSpeed: 1
-  turnSpeedAdjust: 0
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1

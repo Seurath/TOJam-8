@@ -16,6 +16,9 @@ public class NpcSpawnControl : MonoBehaviour {
 	private List<Transform> activeNpcs = new List<Transform>();
 	private int totalSpawned = 0;
 	
+	public GameObject messageRecipient;
+	public string spawnsCompleteMessage = "SpawnsComplete";
+	
 	// Use this for initialization
 	void Start () {
 		if(spawnPoints.Length == 0)
@@ -76,10 +79,20 @@ public class NpcSpawnControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		activeNpcs.Remove(null);
+		
 		if(maxTotal > 0 && totalSpawned >= maxTotal)
 		{
-			// Stop updating this spawn control
-			enabled = false;
+			if(activeNpcs.Count == 0)
+			{
+				// Stop updating this spawn control
+				if(messageRecipient != null)
+				{
+					messageRecipient.BroadcastMessage(spawnsCompleteMessage);
+				}
+				enabled = false;
+			}
+			
 			return;
 		}
 		
@@ -87,8 +100,6 @@ public class NpcSpawnControl : MonoBehaviour {
 		{
 			return;
 		}
-		
-		activeNpcs.Remove(null);
 		
 		if(activeNpcs.Count < maxSimultaneous)
 		{

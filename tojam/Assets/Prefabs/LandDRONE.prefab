@@ -300,7 +300,7 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 68bcfeb651deb0f48ba4b05ef3afee7c, type: 2}
   killEffect: {fileID: 100000, guid: 893a694b772ffe643ab86fc8ea53fe8d, type: 2}
   distance: 0
-  hitsToKill: 3
+  hitsToKill: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
