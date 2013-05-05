@@ -4,7 +4,7 @@ using System.Collections;
 public class CheckForDrones : MonoBehaviour {
 	
 	private float timeLeft = 0f;
-	
+	public GameObject levelEnd;
 	// Use this for initialization
 	void Start () {
 	
@@ -23,6 +23,7 @@ public class CheckForDrones : MonoBehaviour {
 			{
 				Debug.Log("Drones are dead!");
 				//Application.LoadLevel("JakTestLevel");
+				levelEnd.SetActive(true);
 			}
 			
 		}
