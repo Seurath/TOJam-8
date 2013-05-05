@@ -23,6 +23,7 @@ public class HitSwitch : MonoBehaviour {
 		if(switchEnabled && messageRecipient != null)
 		{
 			messageRecipient.BroadcastMessage(switchHitMessage);
+			enabled = false;
 		}
 	}
 	
