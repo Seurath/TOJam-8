@@ -44,7 +44,7 @@ public class PunchPlayer : MonoBehaviour {
 		transform.Rotate (0.0f, joystickRight.x * turnSpeed, 0.0f);
 		if(cameraMount != null)
 		{
-			pitch += joystickRight.y * turnSpeed;
+			pitch -= joystickRight.y * turnSpeed;
 			if(pitch > pitchClamp.y)
 			{
 				pitch = pitchClamp.y;
