@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Terrain
-  m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -17,7 +17,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: 7ee1021230d36f147973978e54797ed5, type: 3}
-          m_Scale: {x: 200, y: 200}
+          m_Scale: {x: 1000, y: 1000}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -32,13 +32,6 @@ Material:
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Detail
-        second:
-          m_Texture: {fileID: 2800000, guid: 9d03883d7e2d8524eaf9386452311dd1, type: 3}
-          m_Scale: {x: 1000, y: 1000}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -81,6 +74,13 @@ Material:
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 2800000, guid: 9d03883d7e2d8524eaf9386452311dd1, type: 3}
+          m_Scale: {x: 1000, y: 1000}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -135,12 +135,12 @@ Material:
         second: .699999988
       data:
         first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _EmissionLM
         second: 0
+      data:
+        first:
+          name: _InvFade
+        second: 1
       data:
         first:
           name: _WaveScale
@@ -180,10 +180,6 @@ Material:
         second: {r: .5, g: .5, b: .5, a: .5}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _RefrColor
         second: {r: .340000004, g: .850000024, b: .920000017, a: 1}
       data:
@@ -194,6 +190,10 @@ Material:
         first:
           name: _HorizonColor
         second: {r: .172000006, g: .463, b: .435000002, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _DistortParams
