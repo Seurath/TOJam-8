@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.4255886, y: -20.5972614, z: 174.770615}
+  m_LocalPosition: {x: -42.5546913, y: -28.8062649, z: 174.770615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1.43236911, y: 1.43236911, z: 1.43236911}
+  m_LocalScale: {x: 4.97552156, y: 4.97552156, z: 4.97552156}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!23 &2300000
@@ -72,7 +72,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: d85192885f87f1f4d92c6ab89b6a08fb, type: 2}
+  - {fileID: 2100000, guid: b1eb89317dc368a49a0aac1dee8ccb3e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -93,7 +93,7 @@ Rigidbody:
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: .899999976
+  m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fd1765de79c9644839c5f8dc0324ed, type: 3}
   m_Name: 
   target: {fileID: 0}
-  rotationRate: 200
-  speed: 500
+  rotationRate: 500
+  speed: 100
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -174,7 +174,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.61999989
+  m_Radius: 6.55000019
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
