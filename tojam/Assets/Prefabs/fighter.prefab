@@ -685,7 +685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100088
 GameObject:
   m_ObjectHideFlags: 1
@@ -799,7 +799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100102
 GameObject:
   m_ObjectHideFlags: 1
@@ -1173,7 +1173,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_LocalRotation: {x: -.066297099, y: -.119825855, z: -.627795696, w: .766236842}
+  m_LocalRotation: {x: -.0662971064, y: -.119825862, z: -.627795756, w: .766236901}
   m_LocalPosition: {x: -.141778558, y: 1.52587887e-07, z: 6.10351549e-07}
   m_LocalScale: {x: 3.01239991, y: 3.01240015, z: 3.01240015}
   m_Children:
@@ -2387,7 +2387,7 @@ AudioSource:
   m_GameObject: {fileID: 100070}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b4c1d833c8a894706b00b1c2934e45d8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0fe75332d94b244b28fa6c3c0f139548, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .5
   m_Pitch: 1
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   Chromatic: 1
   BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   NearClipPlane: .150000006
-  FarClipPlane: 1000
+  FarClipPlane: 5000
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2981,7 +2981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72742cf5c93904503a9e26a192dcdc56, type: 3}
   m_Name: 
   engineHum: {fileID: 8200000}
-  bulletSound: {fileID: 0}
+  bulletSound: {fileID: 8200000}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
