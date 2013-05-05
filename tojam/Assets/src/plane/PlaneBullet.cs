@@ -21,10 +21,11 @@ public class PlaneBullet : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)  
 	{
-		Drone myDrone = other.gameObject.GetComponentInChildren<Drone>();		
+		Drone myDrone = other.gameObject.GetComponentInChildren<Drone>();
 		if (myDrone != null)
 		{
-			//Debug.Log("HIT DRONE");	
+			//Debug.Log("HIT DRONE");
+			myDrone.Death();
 			GameObject.Instantiate(kill, this.transform.position, this.transform.rotation);
 			Destroy(other.gameObject);
 		}

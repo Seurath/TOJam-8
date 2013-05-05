@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class HitSwitch : MonoBehaviour {
+public class HitSwitch : MonoBehaviour 
+{
+	[SerializeField] private AudioSource switchSound;
+	
 	public GameObject messageRecipient;
 //	public string scriptType;
 	public string switchHitMessage;
@@ -24,6 +27,7 @@ public class HitSwitch : MonoBehaviour {
 		{
 			Debug.Log ("HIT");
 			messageRecipient.BroadcastMessage(switchHitMessage);
+			PlaySwitchSound();
 			enabled = false;
 		}
 	}
@@ -38,11 +42,18 @@ public class HitSwitch : MonoBehaviour {
 	
 	void EnableSwitch()
 	{
+		PlaySwitchSound();
 		switchEnabled = true;
 	}
 	
 	void DisableSwitch()
 	{
 		switchEnabled = false;
+	}
+	
+	private void PlaySwitchSound ()
+	{
+		if (this.switchSound == null) { return; }
+		this.switchSound.Play();
 	}
 }

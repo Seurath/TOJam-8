@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Drone : MonoBehaviour
 {
+	[SerializeField] private DroneAudioController audioController;
 	
 	public GameObject target;
 	public float rotationRate;
@@ -33,6 +34,7 @@ public class Drone : MonoBehaviour
 				GameObject.Instantiate (bullet, bulletSpawns [currentBulletSpawn].transform.position, bulletSpawns [currentBulletSpawn].transform.rotation);
 				currentBulletSpawn ++;
 				currentBulletSpawn = currentBulletSpawn % bulletSpawns.Length;
+				this.audioController.PlayBulletSound();
 			}
 		}
 		
@@ -59,5 +61,10 @@ public class Drone : MonoBehaviour
 		}
 		
 		
+	}
+	
+	public void Death ()
+	{
+		this.audioController.PlayDeathSound();
 	}
 }
