@@ -12,7 +12,7 @@ public class NpcSpawnControl : MonoBehaviour {
 	public Transform[] npcTypes;
 	
 	private bool[] usedSpawnPoints;
-	private float spawnTimer = 0.0f;
+	private float spawnTimer = -1.0f;
 	private List<Transform> activeNpcs = new List<Transform>();
 	private int totalSpawned = 0;
 	
@@ -33,6 +33,10 @@ public class NpcSpawnControl : MonoBehaviour {
 		}
 		
 		usedSpawnPoints = new bool[spawnPoints.Length];
+	}
+	
+	void StartFromPort()
+	{
 		spawnTimer = spawnDelay;
 	}
 	
@@ -76,6 +80,11 @@ public class NpcSpawnControl : MonoBehaviour {
 		{
 			// Stop updating this spawn control
 			enabled = false;
+			return;
+		}
+		
+		if(spawnTimer < 0.0f)
+		{
 			return;
 		}
 		
