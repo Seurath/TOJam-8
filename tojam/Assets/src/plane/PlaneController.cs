@@ -14,12 +14,14 @@ public class PlaneController : MonoBehaviour
 	
 	public float reorientRate = 10f;
 	
-	public float horizontalAxis;
-	public float verticalAxis;
-	public float yawAxis;
+	private float horizontalAxis;
+	private float verticalAxis;
+	private float yawAxis;
 	
-	public float leftY;
-	public float rightY;
+	private float leftY;
+	private float rightY;
+	
+	private float throttle;
 	
 	
 	public float pitchLowerLimit = -15f;
@@ -32,6 +34,8 @@ public class PlaneController : MonoBehaviour
 	public float timeSinceLastSpawn = 0.25f;
 	
 	public GameObject tiltObject;
+	
+	private float tiltFix;
 	
 	// Use this for initialization
 	void Start ()
@@ -47,12 +51,15 @@ public class PlaneController : MonoBehaviour
 		{
 			verticalAxis = Input.GetAxis("VerticalL");
 			yawAxis = Input.GetAxis("HorizontalL");
+			throttle = 1;
 		} else{
 		
 			horizontalAxis = SixenseInput.Controllers[0].Rotation.y;
 			verticalAxis = SixenseInput.Controllers[0].Rotation.x;
 			
 			yawAxis = SixenseInput.Controllers[0].Rotation.z;
+			throttle = SixenseInput.Controllers[0].JoystickY;			
+			tiltFix = SixenseInput.Controllers[0].JoystickX;
 		}
 		
 		
@@ -65,7 +72,8 @@ public class PlaneController : MonoBehaviour
 		
 		
 		
-		this.rigidbody.AddRelativeForce (Vector3.forward * Thrust);
+		
+		this.rigidbody.AddRelativeForce (Vector3.forward * Thrust * throttle);
 		this.rigidbody.AddRelativeTorque (new Vector3 (verticalAxis * pitchRate, yawAxis * yawRate, horizontalAxis * -rollRate));
 		rigidbody.AddForce (LiftVector, ForceMode.Force);
 		

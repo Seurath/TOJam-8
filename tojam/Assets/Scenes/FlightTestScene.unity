@@ -10375,7 +10375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3aedaf87d8dadf4595a398694166db5, type: 3}
   m_Name: 
   xboxMode: 0
-  Thrust: 100
+  Thrust: 350
   liftStrength: 5000
   rollRate: 0
   pitchRate: 400
@@ -10387,6 +10387,7 @@ MonoBehaviour:
   yawAxis: 0
   leftY: 0
   rightY: 0
+  throttle: 0
   pitchLowerLimit: -15
   pitchUpperLimit: 15
   rollLowerLimit: 0
@@ -11796,9 +11797,9 @@ Transform:
   m_LocalPosition: {x: .316741943, y: -58.2173653, z: 798.968079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 968854353}
-  - {fileID: 779084861}
   - {fileID: 460512623}
+  - {fileID: 779084861}
+  - {fileID: 968854353}
   m_Father: {fileID: 0}
 --- !u!1 &1021111343
 GameObject:
@@ -14954,6 +14955,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
       propertyPath: xboxMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
+      propertyPath: Thrust
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
@@ -20220,9 +20225,9 @@ Transform:
   m_LocalPosition: {x: .316741943, y: -58.2173653, z: 625.758972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 270685874}
   - {fileID: 1961392650}
   - {fileID: 492162058}
+  - {fileID: 270685874}
   m_Father: {fileID: 0}
 --- !u!1 &1832450657
 GameObject:
