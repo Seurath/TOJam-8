@@ -3,6 +3,11 @@ using System.Collections;
 
 public class KeyholeScript : MonoBehaviour {
 	public GameObject key;
+	
+	public string unlockedMessage = "KeyUnlocked";
+	public string lockedMessage = "KeyLocked";
+	
+	public GameObject messageRecipient;
 
 	// Use this for initialization
 	void Start () {
@@ -18,16 +23,21 @@ public class KeyholeScript : MonoBehaviour {
 	{
 		if(other.gameObject == key || other.gameObject.transform.parent == key)
 		{
-			Debug.Log ("Success!");
+			if(messageRecipient != null)
+			{
+				messageRecipient.BroadcastMessage(unlockedMessage);
+			}
 		}
 	}
 	
 	void OnTriggerExit(Collider other)
 	{
-		Debug.Log ("SOMETHING EXITED: " + other.name);
 		if(other.gameObject == key || other.gameObject.transform.parent == key)
 		{
-			Debug.Log ("Hey, where are you taking that?");
+			if(messageRecipient != null)
+			{
+				messageRecipient.BroadcastMessage(lockedMessage);
+			}
 		}
 	}
 }

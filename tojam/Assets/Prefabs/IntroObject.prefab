@@ -47,7 +47,7 @@ MonoBehaviour:
   introText: You have entered the rift.
   instructionsText: Please hold the controllers upright against your shoulders like
     in the image and press both triggers..
-  instructionsTexture: {fileID: 2800000, guid: d7f8fa6b2f4066546afb42cf1b421400, type: 3}
+  instructionsTexture: {fileID: 2800000, guid: 76a43c9bc10aa3846aa8ac566520fcfb, type: 3}
   goodLuckText: Good luck!
 --- !u!1001 &100100000
 Prefab:

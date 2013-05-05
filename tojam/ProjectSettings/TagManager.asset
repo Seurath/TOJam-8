@@ -3,8 +3,6 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Fist
-  - GrabTrigger
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -14,12 +12,8 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: QuitHittingYourself
-<<<<<<< HEAD
-  User Layer 9: NotGrabbable
-=======
-  User Layer 9: fighter
->>>>>>> 46e8fe99f3c0f48a8e2f3ed90fcd95f1c3b4da91
+  User Layer 8: 
+  User Layer 9: 
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
