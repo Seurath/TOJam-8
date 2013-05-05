@@ -10,7 +10,7 @@ public class Drone : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		target = GameObject.Find("Airplane");
+		target = GameObject.Find("fighter");
 	}
 	
 	// Update is called once per frame
