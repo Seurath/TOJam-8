@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: spire
-  m_Shader: {fileID: 4, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 10, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -36,12 +36,16 @@ Material:
     m_Floats:
       data:
         first:
-          name: _EmissionLM
-        second: 0
-      data:
-        first:
           name: _Shininess
         second: .078125
+      data:
+        first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _EmissionLM
+        second: 0
     m_Colors:
       data:
         first:
@@ -51,3 +55,7 @@ Material:
         first:
           name: _SpecColor
         second: {r: .636221886, g: .810696542, b: .835820913, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .5, g: .5, b: .5, a: .5}
