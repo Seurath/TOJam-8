@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlaneController : MonoBehaviour
 {
+	public bool xboxMode;
+	
 	public float Thrust = 10f;
 	public float liftStrength = 1f;
 	public float rollRate = 1.0f;
@@ -41,11 +43,17 @@ public class PlaneController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		horizontalAxis = SixenseInput.Controllers[0].Rotation.y;
-		verticalAxis = SixenseInput.Controllers[0].Rotation.x;
+		if(xboxMode)
+		{
+			verticalAxis = Input.GetAxis("VerticalL");
+			yawAxis = Input.GetAxis("HorizontalL");
+		} else{
 		
-		yawAxis = SixenseInput.Controllers[0].Rotation.z;
-		
+			horizontalAxis = SixenseInput.Controllers[0].Rotation.y;
+			verticalAxis = SixenseInput.Controllers[0].Rotation.x;
+			
+			yawAxis = SixenseInput.Controllers[0].Rotation.z;
+		}
 		
 		
 		leftY = SixenseInput.Controllers[0].Position.y;
