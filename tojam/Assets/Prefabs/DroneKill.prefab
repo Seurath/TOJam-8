@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 16.2352066, y: -6.26148605, z: 500.597137}
+  m_LocalPosition: {x: 15.5421743, y: -.220661387, z: 212.182678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,14 +39,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c6bdecddae980a4d98a62ca37bb4549, type: 3}
   m_Name: 
-  timeLeft: 1
+  timeLeft: 2
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  lengthInSec: 1
+  lengthInSec: 2
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -57,7 +57,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -72,7 +72,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .200000003
+          value: .666666687
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -80,7 +80,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: 50
+      scalar: 80
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -95,7 +95,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .400000006
+          value: .125
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -197,7 +197,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 2
     startSize:
-      scalar: 30
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -262,7 +262,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    gravityModifier: 0
+    gravityModifier: 10
     inheritVelocity: 0
     maxNumParticles: 1000
   ShapeModule:
@@ -314,7 +314,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 100
+    cnt0: 120
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -359,18 +359,13 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
   RotationModule:
-    enabled: 0
+    enabled: 1
     curve:
-      scalar: .785398185
+      scalar: 3.1415925
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -381,18 +376,13 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
+      minMaxState: 3
   ColorModule:
     enabled: 1
     gradient:
@@ -402,7 +392,7 @@ ParticleSystem:
           rgba: 4278190335
         key1:
           serializedVersion: 2
-          rgba: 4293590784
+          rgba: 15400704
         key2:
           serializedVersion: 2
           rgba: 16763392
@@ -430,7 +420,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 57632
+        atime1: 65535
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -438,7 +428,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_NumColorKeys: 3
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         key0:
           serializedVersion: 2
@@ -1083,7 +1073,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 68fd2695024b5154a95760336ffaca23, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
