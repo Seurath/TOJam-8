@@ -121,7 +121,8 @@ public class ColourFade : MonoBehaviour {
 	
 	void DrawTextbox(string text)
 	{
-		GUI.Label (new Rect(Screen.width / 3.0f, Screen.height / 3.0f, Screen.width / 3.0f, Screen.height / 3.0f), text);
+		GUI.Label (new Rect(Screen.width / 8.0f, Screen.height / 3.5f, Screen.width / 3.0f, Screen.height / 2.0f), text);
+		GUI.Label (new Rect(Screen.width / 2.0f + Screen.width / 8.0f, Screen.height / 3.5f, Screen.width / 3.0f, Screen.height / 2.0f), text);
 	}
 	
 	void OnGUI()
@@ -145,7 +146,8 @@ public class ColourFade : MonoBehaviour {
 		
 		if(drawInstructions)
 		{
-			GUI.DrawTexture (new Rect(Screen.width / 3.0f, 2.0f * Screen.height / 3.0f, Screen.width / 3.0f, Screen.height / 3.0f), instructionsTexture);
+			GUI.DrawTexture (new Rect(Screen.width / 8.0f, 2.0f * Screen.height / 4.0f, Screen.width / 3.5f, Screen.height / 3.0f), instructionsTexture);
+			GUI.DrawTexture (new Rect(Screen.width / 2.0f + Screen.width / 8.0f, 2.0f * Screen.height / 4.0f, Screen.width / 3.5f, Screen.height / 3.0f), instructionsTexture);
 		}
 	}
 }
