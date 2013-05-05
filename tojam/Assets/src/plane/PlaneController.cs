@@ -97,7 +97,7 @@ public class PlaneController : MonoBehaviour
 		Quaternion level = Quaternion.Euler(new Vector3(this.transform.localRotation.eulerAngles.x,this.transform.localRotation.eulerAngles.y , 0));
 		this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, level, reorientRate * Time.deltaTime);			
 		
-		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 0.25f)
+		if ((SixenseInput.Controllers[0].GetButton(SixenseButtons.FOUR) || SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER)) && timeSinceLastSpawn > 0.25f)
 		{
 			timeSinceLastSpawn = 0f;
 			GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
