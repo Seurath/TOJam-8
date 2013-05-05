@@ -130,7 +130,7 @@ TrailRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_Time: 2
+  m_Time: 4
   m_StartWidth: 1
   m_EndWidth: 0
   m_Colors:

@@ -31,6 +31,7 @@ public class PlaneController : MonoBehaviour
 	
 	public GameObject bulletPrefab;
 	public GameObject bulletSpawn;
+	public GameObject bulletSpawn2;
 	public float timeSinceLastSpawn = 0.25f;
 	
 	public GameObject tiltObject;
@@ -60,6 +61,7 @@ public class PlaneController : MonoBehaviour
 			yawAxis = SixenseInput.Controllers[0].Rotation.z;
 			throttle = SixenseInput.Controllers[0].JoystickY;			
 			tiltFix = SixenseInput.Controllers[0].JoystickX;
+			
 		}
 		
 		
@@ -96,7 +98,8 @@ public class PlaneController : MonoBehaviour
 		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 0.25f)
 		{
 			timeSinceLastSpawn = 0f;
-			GameObject bullet = GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
+			GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+			GameObject.Instantiate(bulletPrefab, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
 
 		}
 		
