@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PunchPlayer : MonoBehaviour {
+public class PunchPlayer : MonoBehaviour 
+{
 	public Vector2 joystickLeft;
 	public Vector2 joystickRight;
 	
