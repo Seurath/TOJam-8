@@ -643,7 +643,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 630364712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df33f998f874a6499ce844d0cb8da84, type: 3}
+  m_Script: {fileID: 11500000, guid: f4745911d6ef5304f996e1434f655e38, type: 3}
   m_Name: 
   upperArm: {fileID: 2015483219}
   forearm: {fileID: 1741647250}
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211195478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df33f998f874a6499ce844d0cb8da84, type: 3}
+  m_Script: {fileID: 11500000, guid: f4745911d6ef5304f996e1434f655e38, type: 3}
   m_Name: 
   upperArm: {fileID: 2024539931}
   forearm: {fileID: 758402215}
