@@ -19,7 +19,7 @@ public class Hand : MonoBehaviour {
 	public Vector3 handWorldPosition;
 	
 	public GameObject skeletalHand;
-	public Rigidbody dynamicCollider;
+	public HandGrab dynamicCollider;
 	
 	public Transform cameraMount;
 	
@@ -99,6 +99,7 @@ public class Hand : MonoBehaviour {
 					else if(skeletalHand != null)
 					{
 						skeletalHand.animation.Play("fist");
+						dynamicCollider.GrabItems();
 					}
 				}
 				else if(triggerDown && controller.Trigger < 0.05) {
@@ -106,6 +107,7 @@ public class Hand : MonoBehaviour {
 					if(skeletalHand != null)
 					{
 						skeletalHand.animation.Play ("unfist");
+						dynamicCollider.LetGoOfItems();
 					}
 				}
 			}
