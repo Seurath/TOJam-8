@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlaneController : MonoBehaviour
 {
+	public bool xboxMode;
+	
 	public float Thrust = 10f;
 	public float liftStrength = 1f;
 	public float rollRate = 1.0f;
@@ -12,12 +14,14 @@ public class PlaneController : MonoBehaviour
 	
 	public float reorientRate = 10f;
 	
-	public float horizontalAxis;
-	public float verticalAxis;
-	public float yawAxis;
+	private float horizontalAxis;
+	private float verticalAxis;
+	private float yawAxis;
 	
-	public float leftY;
-	public float rightY;
+	private float leftY;
+	private float rightY;
+	
+	private float throttle;
 	
 	
 	public float pitchLowerLimit = -15f;
@@ -27,7 +31,12 @@ public class PlaneController : MonoBehaviour
 	
 	public GameObject bulletPrefab;
 	public GameObject bulletSpawn;
-	public float timeSinceLastSpawn = 1f;
+	public GameObject bulletSpawn2;
+	public float timeSinceLastSpawn = 0.25f;
+	
+	public GameObject tiltObject;
+	
+	private float tiltFix;
 	
 	// Use this for initialization
 	void Start ()
@@ -39,11 +48,21 @@ public class PlaneController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		horizontalAxis = SixenseInput.Controllers[0].Rotation.z;
-		verticalAxis = SixenseInput.Controllers[0].Rotation.x;
+		if(xboxMode)
+		{
+			verticalAxis = Input.GetAxis("VerticalL");
+			yawAxis = Input.GetAxis("HorizontalL");
+			throttle = 1;
+		} else{
 		
-		yawAxis = SixenseInput.Controllers[0].Rotation.y;
-		
+			horizontalAxis = SixenseInput.Controllers[0].Rotation.y;
+			verticalAxis = SixenseInput.Controllers[0].Rotation.x;
+			
+			yawAxis = SixenseInput.Controllers[0].Rotation.z;
+			throttle = SixenseInput.Controllers[0].JoystickY;			
+			tiltFix = SixenseInput.Controllers[0].JoystickX;
+			
+		}
 		
 		
 		leftY = SixenseInput.Controllers[0].Position.y;
@@ -55,7 +74,8 @@ public class PlaneController : MonoBehaviour
 		
 		
 		
-		this.rigidbody.AddRelativeForce (Vector3.forward * Thrust);
+		
+		this.rigidbody.AddRelativeForce (Vector3.forward * Thrust * throttle);
 		this.rigidbody.AddRelativeTorque (new Vector3 (verticalAxis * pitchRate, yawAxis * yawRate, horizontalAxis * -rollRate));
 		rigidbody.AddForce (LiftVector, ForceMode.Force);
 		
@@ -75,13 +95,15 @@ public class PlaneController : MonoBehaviour
 		Quaternion level = Quaternion.Euler(new Vector3(this.transform.localRotation.eulerAngles.x,this.transform.localRotation.eulerAngles.y , 0));
 		this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, level, reorientRate * Time.deltaTime);			
 		
-		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 1f)
+		if (SixenseInput.Controllers[0].GetButton(SixenseButtons.TRIGGER) && timeSinceLastSpawn > 0.25f)
 		{
 			timeSinceLastSpawn = 0f;
-			GameObject bullet = GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
+			GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+			GameObject.Instantiate(bulletPrefab, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
 
 		}
 		
+		tiltObject.transform.localRotation = Quaternion.Euler(new Vector3(0,0, -yawAxis * yawRate * 0.1f));
 		
 		
 	}

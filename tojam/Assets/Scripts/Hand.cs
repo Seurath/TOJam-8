@@ -7,12 +7,10 @@ public class Hand : MonoBehaviour {
 	public bool useHydra = true;
 	
 	public int id;
-	public GameObject player;
+	public PunchPlayer player;
 	
 	public float zOffset;
 	public float yOffset;
-	
-	public Component playerScript;
 	
 	private bool triggerDown = false;
 	
@@ -30,8 +28,11 @@ public class Hand : MonoBehaviour {
 		{
 			zOffset = 1.0f;
 		}
-
-//		playerScript = player.GetComponent("player");
+		
+		if(player == null)
+		{
+			Debug.LogError ("Hand needs a PunchPlayer");
+		}
 	}
 	
 	void Update () {
@@ -66,13 +67,11 @@ public class Hand : MonoBehaviour {
 			}
 			
 			// Send analog stick values to the player, for movement purposes
-			if(id == 0){
-//				playerScript.joystickLeftX = plugin.data.joystick_x;
-//				playerScript.joystickLeftY = plugin.data.joystick_y;
+			if(id == 0) {
+				leftStick = new Vector2((plugin.data.joystick_x - 127) / 127.0f, (plugin.data.joystick_y - 127) / 127.0f);
 			}
-			else if(id == 1){
-//				playerScript.joystickRightX = plugin.data.joystick_x;
-//				playerScript.joystickRightY = plugin.data.joystick_y;
+			else if(id == 1) {
+				rightStick = new Vector2((plugin.data.joystick_x - 127) / 127.0f, (plugin.data.joystick_y - 127) / 127.0f);
 			}
 		}
 		else // For use with an xbox controller
@@ -115,9 +114,11 @@ public class Hand : MonoBehaviour {
 		
 		if(id == 0)
 		{
+			player.joystickLeft = leftStick;
 		}
 		else if(id == 1)
 		{
+			player.joystickRight = rightStick;
 		}
 	}
 }

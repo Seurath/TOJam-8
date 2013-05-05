@@ -6,6 +6,7 @@ public class PlaneBullet : MonoBehaviour {
 	
 	public float speed = 10f;
 	public GameObject explosion;
+	public GameObject kill;
 	
 	
 	// Use this for initialization
@@ -24,6 +25,7 @@ public class PlaneBullet : MonoBehaviour {
 		if (myDrone != null)
 		{
 			Debug.Log("HIT DRONE");	
+			GameObject.Instantiate(kill, this.transform.position, this.transform.rotation);
 			Destroy(other.gameObject);
 		}
 		
