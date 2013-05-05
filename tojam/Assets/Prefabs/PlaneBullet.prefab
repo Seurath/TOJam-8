@@ -45,8 +45,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 424.624603, y: 522.775085, z: -1019.84875}
-  m_LocalScale: {x: .468578756, y: .468578756, z: .468578756}
+  m_LocalPosition: {x: 16.5696373, y: -.289776921, z: -54.4836578}
+  m_LocalScale: {x: 1.68094456, y: 1.68094456, z: 1.68094456}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.4213209, y: 0, z: -.623014092}
+  m_LocalPosition: {x: -.137998298, y: 0, z: -.286933661}
   m_LocalScale: {x: .315686405, y: .315686405, z: .315686405}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -164,7 +164,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 12100000, guid: 47bc7a31321759241bd65ab972c78ff2, type: 2}
+  m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6e4eff7211aeb408a7f3a78dad36f3, type: 3}
   m_Name: 
-  speed: 300
+  speed: 200
   explosion: {fileID: 100000, guid: 6e6ac80ec50b7404987938d5edd2658d, type: 2}
   kill: {fileID: 100000, guid: 893a694b772ffe643ab86fc8ea53fe8d, type: 2}
 --- !u!114 &11400002

@@ -15,7 +15,8 @@ public class Drone : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		target = GameObject.Find ("fighter");
+		//target = GameObject.Find ("fighter");
+		target = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	private float timeUntilNextShot = 0.25f;
