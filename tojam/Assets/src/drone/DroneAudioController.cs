@@ -9,11 +9,13 @@ public class DroneAudioController : MonoBehaviour
 	
 	public void PlayBulletSound ()
 	{
+		if (this.bulletSound == null) { return; }
 		this.bulletSound.Play();
 	}
 	
 	public void PlayDeathSound ()
 	{
+		if (this.deathSound == null) { return; }
 		this.deathSound.Play();
 	}
 	

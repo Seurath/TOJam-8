@@ -3192,6 +3192,7 @@ GameObject:
   - 54: {fileID: 355070118}
   - 138: {fileID: 355070117}
   - 114: {fileID: 355070120}
+  - 82: {fileID: 355070121}
   m_Layer: 8
   m_Name: tempHandL
   m_TagString: Fist
@@ -3263,6 +3264,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf665b4148c52864287dd7e4bc26a4b6, type: 3}
   m_Name: 
+  grabSound: {fileID: 0}
   itemsInReach: []
   heldItems: []
   ungrabbable:
@@ -3270,6 +3272,62 @@ MonoBehaviour:
     m_Bits: 256
   - serializedVersion: 2
     m_Bits: 512
+--- !u!82 &355070121
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355070115}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: fb95f96554521459b98268ca3974f107, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &358905324
 GameObject:
   m_ObjectHideFlags: 0
@@ -11294,7 +11352,6 @@ GameObject:
   - 4: {fileID: 1129051654}
   - 33: {fileID: 1129051659}
   - 23: {fileID: 1129051658}
-  - 114: {fileID: 1129051657}
   - 114: {fileID: 1129051655}
   - 143: {fileID: 1129051656}
   m_Layer: 8
@@ -11362,26 +11419,6 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1129051657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400024, guid: 611220255fa83e14991106f38b363a73,
-    type: 2}
-  m_PrefabInternal: {fileID: 559333726}
-  m_GameObject: {fileID: 1129051653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d9eb95ff73c5b458896684f586fb06, type: 3}
-  m_Name: 
-  id: 0
-  joystickRightX: 0
-  joystickRightY: 0
-  joystickLeftX: 0
-  joystickLeftY: 0
-  speed: 10
-  speedAdjust: 0
-  turnSpeed: 1
-  turnSpeedAdjust: 0
 --- !u!23 &1129051658
 Renderer:
   m_ObjectHideFlags: 0
@@ -13578,7 +13615,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400120, guid: 611220255fa83e14991106f38b363a73, type: 2}
   m_PrefabInternal: {fileID: 559333726}
   m_GameObject: {fileID: 1403805954}
-  m_LocalRotation: {x: -.00136527512, y: -.707105458, z: .707105458, w: -.00136527512}
+  m_LocalRotation: {x: -.00136527524, y: -.707105517, z: .707105517, w: -.00136527524}
   m_LocalPosition: {x: -31.333868, y: .152540222, z: 3.87133956}
   m_LocalScale: {x: -.402619213, y: -.402619213, z: -.402619183}
   m_Children:
@@ -15817,6 +15854,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf665b4148c52864287dd7e4bc26a4b6, type: 3}
   m_Name: 
+  grabSound: {fileID: 0}
   itemsInReach: []
   heldItems: []
   ungrabbable:
@@ -19298,7 +19336,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400070, guid: 611220255fa83e14991106f38b363a73, type: 2}
   m_PrefabInternal: {fileID: 559333726}
   m_GameObject: {fileID: 2075918609}
-  m_LocalRotation: {x: -.00136527512, y: .707105458, z: .707105458, w: .00136527512}
+  m_LocalRotation: {x: -.00136527524, y: .707105517, z: .707105517, w: .00136527524}
   m_LocalPosition: {x: 1.41219616, y: .152540222, z: 3.87133956}
   m_LocalScale: {x: .402619213, y: .402619213, z: .402619183}
   m_Children:

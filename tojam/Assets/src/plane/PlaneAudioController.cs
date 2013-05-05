@@ -9,11 +9,13 @@ public class PlaneAudioController : MonoBehaviour
 	
 	public void PlayBulletSound ()
 	{
+		if (this.bulletSound == null) { return; }
 		this.bulletSound.Play();
 	}
 	
 	public void PlayEngineSound (bool isEnabled)
 	{
+		if (this.engineHum == null) { return; }
 		if (isEnabled)
 		{
 			this.engineHum.Play();
