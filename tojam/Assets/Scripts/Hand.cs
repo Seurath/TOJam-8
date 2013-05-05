@@ -19,6 +19,7 @@ public class Hand : MonoBehaviour {
 	public Vector3 controllerPosition;
 	
 	public GameObject skeletalHand;
+	public Rigidbody dynamicCollider;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -101,10 +102,22 @@ public class Hand : MonoBehaviour {
 												Mathf.Clamp (Input.GetAxis ("VerticalR"), -0.75f, 0.75f) * -2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalL"), -0.75f, 0.75f) + 0.25f) +
 											  new Vector3(0.0f, 0.0f, zOffset);
+					
+					if(!triggerDown && skeletalHand != null)
+					{
+						skeletalHand.animation.Play("fist");
+						triggerDown = true;
+					}
 				}
 				else
 				{
 					leftStick = new Vector2(Input.GetAxis ("HorizontalL"), Input.GetAxis ("VerticalL"));
+					
+					if(triggerDown && skeletalHand != null)
+					{
+						skeletalHand.animation.Play("unfist");
+						triggerDown = false;
+					}
 				}
 			}
 			else if(id == 1)
@@ -117,10 +130,22 @@ public class Hand : MonoBehaviour {
 												Mathf.Clamp (Input.GetAxis ("VerticalR"), -0.75f, 0.75f) * -2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalL"), -0.75f, 0.75f) + 0.25f) +
 											  new Vector3(0.0f, 0.0f, zOffset);
+					
+					if(!triggerDown && skeletalHand != null)
+					{
+						skeletalHand.animation.Play("fist");
+						triggerDown = true;
+					}
 				}
 				else
 				{
 					rightStick = new Vector2(Input.GetAxis ("HorizontalR"), Input.GetAxis("VerticalR"));
+					
+					if(triggerDown && skeletalHand != null)
+					{
+						skeletalHand.animation.Play("unfist");
+						triggerDown = false;
+					}
 				}
 			}
 		}

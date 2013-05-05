@@ -840,6 +840,7 @@ MonoBehaviour:
   rightStick: {x: 0, y: 0}
   controllerPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 392749303}
+  dynamicCollider: {fileID: 0}
 --- !u!1 &376041243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,7 @@ MonoBehaviour:
   rightStick: {x: 0, y: 0}
   controllerPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 2038994929}
+  dynamicCollider: {fileID: 0}
 --- !u!1 &475727498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,6 +2806,7 @@ MonoBehaviour:
   backwardsMultiplier: .800000012
   strafeMultiplier: .800000012
   turnSpeed: 4
+  playerCamera: {fileID: 0}
 --- !u!1 &1139175000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,14 +2946,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1192811811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a977ae6f6b6374ca680623c52a69af, type: 3}
+  m_Script: {fileID: 11500000, guid: f5be85f8438ca3145aac56e800a217cf, type: 3}
   m_Name: 
-  material: {fileID: 2100000, guid: bc1d767df3c3b5c4b866b53bb565625c, type: 2}
+  material: {fileID: 2100000, guid: fa77fe97b0170804ab2b486d1cf3042f, type: 2}
   _Center: {x: .5, y: .5}
   _ScaleIn: {x: 1, y: 1}
   _Scale: {x: 1, y: 1}
   _HmdWarpParam: {x: 1, y: 0, z: 0, w: 0}
-  material_CA: {fileID: 2100000, guid: 628681b4d349e1b41bc1bb62ccebc0b2, type: 2}
+  material_CA: {fileID: 2100000, guid: 700ec7db7ac6ff24f9f4a3d4cd157910, type: 2}
   _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
 --- !u!114 &1192811814
 MonoBehaviour:
@@ -2961,7 +2964,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1192811811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb228ee07a78274584036643d6d49a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 467c1e6bb64de664bbba9800bb135078, type: 3}
   m_Name: 
   NeckPosition: {x: 0, y: 0, z: 0}
   EyePosition: {x: 0, y: .0900000036, z: .159999996}
@@ -3079,7 +3082,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259009054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a491becab171af741aff3f5ee5ee5832, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
   m_Name: 
   InitialPredictionTime: .0299999993
   InitialAccelGain: .0500000007
@@ -3092,7 +3095,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259009054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8523e171e63a32944a76ea968b3f97f0, type: 3}
+  m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
   m_Name: 
   NeckPosition: {x: 0, y: .699999988, z: 0}
   EyeCenterPosition: {x: 0, y: .150000006, z: .0900000036}
@@ -3943,14 +3946,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849217338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a977ae6f6b6374ca680623c52a69af, type: 3}
+  m_Script: {fileID: 11500000, guid: f5be85f8438ca3145aac56e800a217cf, type: 3}
   m_Name: 
-  material: {fileID: 2100000, guid: bc1d767df3c3b5c4b866b53bb565625c, type: 2}
+  material: {fileID: 2100000, guid: fa77fe97b0170804ab2b486d1cf3042f, type: 2}
   _Center: {x: .5, y: .5}
   _ScaleIn: {x: 1, y: 1}
   _Scale: {x: 1, y: 1}
   _HmdWarpParam: {x: 1, y: 0, z: 0, w: 0}
-  material_CA: {fileID: 2100000, guid: 628681b4d349e1b41bc1bb62ccebc0b2, type: 2}
+  material_CA: {fileID: 2100000, guid: 700ec7db7ac6ff24f9f4a3d4cd157910, type: 2}
   _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
 --- !u!114 &1849217341
 MonoBehaviour:
@@ -3961,9 +3964,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849217338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb228ee07a78274584036643d6d49a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 467c1e6bb64de664bbba9800bb135078, type: 3}
   m_Name: 
-  NeckPosition: {x: 0, y: .699999988, z: 0}
+  NeckPosition: {x: 0, y: 0, z: 0}
   EyePosition: {x: 0, y: .0900000036, z: .159999996}
 --- !u!81 &1849217342
 AudioListener:

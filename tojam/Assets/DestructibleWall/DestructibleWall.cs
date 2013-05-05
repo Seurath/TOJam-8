@@ -45,7 +45,7 @@ public class DestructibleWall : MonoBehaviour {
 			evenY = !evenY;
 		}
 		
-		if(weakBrickX >= 0 && weakBrickY >= 0)
+		if(weakBrickX >= 0 && weakBrickY >= 0 && weakBrickX < numBricksX && weakBrickY < numBricksY)
 		{
 			bricks[weakBrickX, weakBrickY].SetIsWeak (true);
 		}

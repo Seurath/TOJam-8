@@ -8,6 +8,8 @@ public class WallBrick : MonoBehaviour {
 	
 	public bool isWeak = false;
 	
+	public float destructionThreshold = 3.0f;
+	
 	private DestructibleWall wall = null;
 	
 	// Use this for initialization
@@ -36,9 +38,10 @@ public class WallBrick : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision collisionInfo)
 	{
-		if(collisionInfo.gameObject.CompareTag("Fist"))
+		if(collisionInfo.gameObject.CompareTag("Fist") && collisionInfo.relativeVelocity.sqrMagnitude > destructionThreshold * destructionThreshold)
 		{
 			Punched ();
+			rigidbody.AddForce (collisionInfo.impactForceSum);
 		}
 	}
 	
