@@ -2535,7 +2535,7 @@ MonoBehaviour:
   bulletSpawn2: {fileID: 100076}
   timeSinceLastSpawn: .25
   tiltObject: {fileID: 100060}
-  fixOrientSpeed: 10
+  fixOrientSpeed: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
