@@ -1538,6 +1538,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a59d55c328bb4960a279653c1d4be7c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6400002, guid: 7a59d55c328bb4960a279653c1d4be7c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7a59d55c328bb4960a279653c1d4be7c, type: 2}
@@ -2730,6 +2734,7 @@ GameObject:
   - 4: {fileID: 163405945}
   - 33: {fileID: 163405947}
   - 23: {fileID: 163405946}
+  - 64: {fileID: 163405948}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -2774,6 +2779,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 780379866}
   m_GameObject: {fileID: 163405944}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &163405948
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 163405944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &168113379
 GameObject:
@@ -3480,6 +3498,7 @@ GameObject:
   - 4: {fileID: 233331105}
   - 33: {fileID: 233331107}
   - 23: {fileID: 233331106}
+  - 64: {fileID: 233331108}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -3524,6 +3543,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2120223924}
   m_GameObject: {fileID: 233331104}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &233331108
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233331104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &240329912
 GameObject:
@@ -4726,6 +4758,7 @@ GameObject:
   - 4: {fileID: 278317944}
   - 33: {fileID: 278317946}
   - 23: {fileID: 278317945}
+  - 64: {fileID: 278317947}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -4770,6 +4803,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 780379866}
   m_GameObject: {fileID: 278317943}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &278317947
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278317943}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &281186663
 GameObject:
@@ -13747,6 +13793,7 @@ GameObject:
   - 4: {fileID: 758197314}
   - 33: {fileID: 758197316}
   - 23: {fileID: 758197315}
+  - 64: {fileID: 758197317}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -13791,6 +13838,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2120223924}
   m_GameObject: {fileID: 758197313}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &758197317
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758197313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &758688388
 GameObject:
@@ -16048,6 +16108,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: 5dcd01c8d6196d345849e244babaf975, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 5dcd01c8d6196d345849e244babaf975, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dcd01c8d6196d345849e244babaf975, type: 2}
   m_RootGameObject: {fileID: 1630265147}
@@ -16920,6 +16988,7 @@ GameObject:
   - 4: {fileID: 859995665}
   - 33: {fileID: 859995667}
   - 23: {fileID: 859995666}
+  - 64: {fileID: 859995668}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -16964,6 +17033,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 780379866}
   m_GameObject: {fileID: 859995664}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &859995668
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859995664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1001 &860391577
 Prefab:
@@ -21465,7 +21547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &971538864
 Transform:
   m_ObjectHideFlags: 0
@@ -33417,6 +33499,7 @@ GameObject:
   - 4: {fileID: 1420197553}
   - 33: {fileID: 1420197555}
   - 23: {fileID: 1420197554}
+  - 64: {fileID: 1420197556}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -33461,6 +33544,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2120223924}
   m_GameObject: {fileID: 1420197552}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &1420197556
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420197552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &1424712356
 GameObject:
@@ -34435,7 +34531,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1469425346}
-  - 64: {fileID: 1469425347}
   m_Layer: 0
   m_Name: hall
   m_TagString: Untagged
@@ -34460,19 +34555,6 @@ Transform:
   - {fileID: 1381539156}
   - {fileID: 805606796}
   m_Father: {fileID: 1242177005}
---- !u!64 &1469425347
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469425345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
 --- !u!1 &1474621755
 GameObject:
   m_ObjectHideFlags: 0
@@ -40956,6 +41038,7 @@ GameObject:
   - 4: {fileID: 1792866742}
   - 33: {fileID: 1792866744}
   - 23: {fileID: 1792866743}
+  - 64: {fileID: 1792866745}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -41000,6 +41083,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2120223924}
   m_GameObject: {fileID: 1792866741}
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
+--- !u!64 &1792866745
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792866741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1 &1793286980
 GameObject:
@@ -43431,7 +43527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1932315105
 Transform:
   m_ObjectHideFlags: 0
@@ -43532,6 +43628,7 @@ GameObject:
   - 4: {fileID: 1935961123}
   - 33: {fileID: 1935961122}
   - 23: {fileID: 1935961121}
+  - 64: {fileID: 1935961124}
   m_Layer: 8
   m_Name: hallPiece
   m_TagString: Untagged
@@ -43577,6 +43674,19 @@ Transform:
   m_LocalScale: {x: .977713048, y: .977713048, z: .977713048}
   m_Children: []
   m_Father: {fileID: 805606796}
+--- !u!64 &1935961124
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935961120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: 185146a4c3fdb9048aa13f49c9727a25, type: 3}
 --- !u!1001 &1938803097
 Prefab:
   m_ObjectHideFlags: 0
@@ -44356,7 +44466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1986682275
 Transform:
   m_ObjectHideFlags: 0
