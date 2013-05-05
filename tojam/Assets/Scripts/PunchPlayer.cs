@@ -11,7 +11,10 @@ public class PunchPlayer : MonoBehaviour {
 	public float strafeMultiplier = 0.75f;
 	
 	public float turnSpeed = 4.0f;
-	public OVRCameraController playerCamera;
+	public Transform cameraMount;
+	
+	public float pitch = 0.0f;
+	public Vector2 pitchClamp = new Vector2(-30.0f, 30.0f);
 	
 	private CharacterController cc;
 
@@ -39,9 +42,19 @@ public class PunchPlayer : MonoBehaviour {
 		cc.SimpleMove(transform.TransformDirection(localMovementSpeed));
 		
 		transform.Rotate (0.0f, joystickRight.x * turnSpeed, 0.0f);
-		if(playerCamera != null)
+		if(cameraMount != null)
 		{
-			playerCamera.transform.Rotate (joystickRight.y * turnSpeed, 0.0f, 0.0f);
+			pitch += joystickRight.y * turnSpeed;
+			if(pitch > pitchClamp.y)
+			{
+				pitch = pitchClamp.y;
+			}
+			else if(pitch < pitchClamp.x)
+			{
+				pitch = pitchClamp.x;
+			}
+			
+			cameraMount.transform.localRotation = Quaternion.Euler (pitch, 0.0f, 0.0f);
 		}
 	}
 	

@@ -64,10 +64,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400050}
-  - 114: {fileID: 11400010}
   m_Layer: 8
-  m_Name: OVRCameraController
+  m_Name: CameraMount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1346,6 +1344,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &100168
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400168}
+  - 114: {fileID: 11400050}
+  - 114: {fileID: 11400010}
+  m_Layer: 8
+  m_Name: OVRCameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -1380,7 +1395,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400006}
+  m_Father: {fileID: 400168}
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -1391,8 +1406,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.26932085, z: 0}
   m_LocalScale: {x: .71389395, y: .719309092, z: .71389395}
   m_Children:
-  - {fileID: 400004}
-  - {fileID: 400164}
+  - {fileID: 400168}
   m_Father: {fileID: 400032}
 --- !u!4 &400008
 Transform:
@@ -1544,7 +1558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.9561272, y: 4.57643366, z: 26.5116653}
+  m_LocalPosition: {x: 19.213131, y: -2.3646698, z: 13.7093344}
   m_LocalScale: {x: 2.80153656, y: 2.78044581, z: 2.80153656}
   m_Children:
   - {fileID: 400162}
@@ -2341,7 +2355,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400166}
-  m_Father: {fileID: 400006}
+  m_Father: {fileID: 400168}
 --- !u!4 &400166
 Transform:
   m_ObjectHideFlags: 1
@@ -2353,6 +2367,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400164}
+--- !u!4 &400168
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400004}
+  - {fileID: 400164}
+  m_Father: {fileID: 400006}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -3054,13 +3081,20 @@ MonoBehaviour:
   useHydra: 1
   id: 0
   player: {fileID: 11400004}
-  zOffset: 0
-  yOffset: 0
+  offset: {x: 0, y: 0, z: 0}
+  canSetShoulders: 1
+  shoulderSet: 0
   leftStick: {x: 0, y: 0}
   rightStick: {x: 0, y: 0}
-  controllerPosition: {x: 0, y: 0, z: 0}
+  handWorldPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 100090}
-  dynamicCollider: {fileID: 0}
+  dynamicCollider: {fileID: 5400000}
+  wallPushOut: .0500000007
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  cameraMount: {fileID: 400006}
+  fistsDisabled: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3074,13 +3108,20 @@ MonoBehaviour:
   useHydra: 1
   id: 1
   player: {fileID: 11400004}
-  zOffset: 0
-  yOffset: 0
+  offset: {x: 0, y: 0, z: 0}
+  canSetShoulders: 1
+  shoulderSet: 0
   leftStick: {x: 0, y: 0}
   rightStick: {x: 0, y: 0}
-  controllerPosition: {x: 0, y: 0, z: 0}
+  handWorldPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 100026}
-  dynamicCollider: {fileID: 0}
+  dynamicCollider: {fileID: 5400006}
+  wallPushOut: .0500000007
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  cameraMount: {fileID: 400006}
+  fistsDisabled: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3097,6 +3138,9 @@ MonoBehaviour:
   backwardsMultiplier: .800000012
   strafeMultiplier: .800000012
   turnSpeed: 4
+  cameraMount: {fileID: 400006}
+  pitch: 0
+  pitchClamp: {x: -30, y: 30}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3131,7 +3175,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
+  m_GameObject: {fileID: 100168}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
@@ -3154,7 +3198,7 @@ MonoBehaviour:
   target: {fileID: 400030}
   elbowTarget: {fileID: 400008}
   IsEnabled: 1
-  debug: 1
+  debug: 0
   transition: 1
 --- !u!114 &11400014
 MonoBehaviour:
@@ -3202,7 +3246,7 @@ MonoBehaviour:
   target: {fileID: 400038}
   elbowTarget: {fileID: 400034}
   IsEnabled: 1
-  debug: 1
+  debug: 0
   transition: 1
 --- !u!114 &11400020
 MonoBehaviour:
@@ -3432,14 +3476,14 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
+  m_GameObject: {fileID: 100168}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
   m_Name: 
   NeckPosition: {x: 0, y: .699999988, z: 0}
   EyeCenterPosition: {x: 0, y: .150000006, z: .0900000036}
-  FollowOrientation: {fileID: 400032}
+  FollowOrientation: {fileID: 400006}
   TrackerRotatesY: 0
   PredictionOn: 1
   CallInPreRender: 0
@@ -3634,7 +3678,7 @@ CharacterController:
   m_Height: 2
   m_Radius: .500000119
   m_SlopeLimit: 45
-  m_StepOffset: .300000012
+  m_StepOffset: 1
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}

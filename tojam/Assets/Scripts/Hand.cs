@@ -7,19 +7,23 @@ public class Hand : MonoBehaviour {
 	public int id;
 	public PunchPlayer player;
 	
-	public float zOffset;
-	public float yOffset;
+	public Vector3 offset;
 	
 	private bool triggerDown = false;
-	private bool shoulderSet = false;
+	public bool canSetShoulders = true;
+	public bool shoulderSet = false;
 	
 	public Vector2 leftStick;
 	public Vector2 rightStick;
 	
-	public Vector3 controllerPosition;
+	public Vector3 handWorldPosition;
 	
 	public GameObject skeletalHand;
 	public Rigidbody dynamicCollider;
+	
+	public Transform cameraMount;
+	
+	public bool fistsDisabled = true;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -30,7 +34,7 @@ public class Hand : MonoBehaviour {
 		}
 		else
 		{
-			zOffset = 1.0f;
+			offset = new Vector3(0.0f, 0.0f, 1.0f);
 		}
 		
 		if(player == null)
@@ -45,11 +49,28 @@ public class Hand : MonoBehaviour {
 		{
 			//position data
 			SixenseInput.Controller controller = SixenseInput.Controllers[id];
-			controllerPosition = controller.Position;
-			transform.localPosition = new Vector3(
+			Vector3 controllerPosition = controller.Position;
+			Vector3 desiredLocalPosition = new Vector3(
 												controllerPosition.x * .005f,
-												(controllerPosition.y * .005f) + yOffset,
-												(controllerPosition.z * .005f) - zOffset);
+												controllerPosition.y * .005f,
+												controllerPosition.z * .005f) - offset;
+			if(cameraMount != null)
+			{
+				desiredLocalPosition = cameraMount.transform.localRotation * desiredLocalPosition;
+			}
+			
+			if(fistsDisabled)
+			{
+				if(id == 0)
+				{
+					desiredLocalPosition = new Vector3(-1.0f, -0.5f, 1.0f);
+				}
+				else
+				{
+					desiredLocalPosition = new Vector3(1.0f, -0.5f, 1.0f);
+				}
+			}
+			transform.localPosition = desiredLocalPosition;
 				
 			//rotation data
 			transform.localRotation = new Quaternion(
@@ -58,25 +79,34 @@ public class Hand : MonoBehaviour {
 												controller.Rotation.z,
 												controller.Rotation.w);
 			
-			if(controller.Trigger >= 0.9 && !triggerDown) {
-				triggerDown = true;
-				
-				// Allow the user to set the base position by pressing the trigger
-				if(!shoulderSet)
-				{
-					zOffset = controllerPosition.z * .005f;
-					shoulderSet = true;
-				}
-				else if(skeletalHand != null)
-				{
-					skeletalHand.animation.Play("fist");
-				}
+			if(fistsDisabled)
+			{
+				transform.localRotation = new Quaternion();
 			}
-			else if(triggerDown && controller.Trigger < 0.05) {
-				triggerDown = false;
-				if(skeletalHand != null)
-				{
-					skeletalHand.animation.Play ("unfist");
+			
+			
+			if(canSetShoulders)
+			{
+				if(controller.Trigger >= 0.9 && !triggerDown) {
+					triggerDown = true;
+					
+					// Allow the user to set the base position by pressing the trigger
+					if(!shoulderSet)
+					{
+						offset = new Vector3(0.0f, 0.0f, controllerPosition.z * 0.005f);
+						shoulderSet = true;
+					}
+					else if(skeletalHand != null)
+					{
+						skeletalHand.animation.Play("fist");
+					}
+				}
+				else if(triggerDown && controller.Trigger < 0.05) {
+					triggerDown = false;
+					if(skeletalHand != null)
+					{
+						skeletalHand.animation.Play ("unfist");
+					}
 				}
 			}
 			
@@ -101,7 +131,7 @@ public class Hand : MonoBehaviour {
 												(Mathf.Clamp (Input.GetAxis ("HorizontalL"), -0.75f, 0.75f) - 0.25f) * 2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalR"), -0.75f, 0.75f) * -2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalL"), -0.75f, 0.75f) + 0.25f) +
-											  new Vector3(0.0f, 0.0f, zOffset);
+											  offset;
 					
 					if(!triggerDown && skeletalHand != null)
 					{
@@ -129,7 +159,7 @@ public class Hand : MonoBehaviour {
 												(Mathf.Clamp (Input.GetAxis ("HorizontalL"), -0.75f, 0.75f) + 0.25f) * 2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalR"), -0.75f, 0.75f) * -2.0f,
 												Mathf.Clamp (Input.GetAxis ("VerticalL"), -0.75f, 0.75f) + 0.25f) +
-											  new Vector3(0.0f, 0.0f, zOffset);
+											  offset;
 					
 					if(!triggerDown && skeletalHand != null)
 					{

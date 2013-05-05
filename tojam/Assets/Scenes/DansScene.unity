@@ -330,6 +330,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175713005}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &175871745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 175871750}
+  - 33: {fileID: 175871749}
+  - 65: {fileID: 175871748}
+  - 114: {fileID: 175871747}
+  - 23: {fileID: 175871746}
+  m_Layer: 0
+  m_Name: DestructibleWallObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &175871746
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: adc6cc7fc6cce2140b5f7c4b057e27de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  m_GameObject: {fileID: 175871745}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!114 &175871747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  m_GameObject: {fileID: 175871745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde1aed875305ec42a3900510bbbee03, type: 3}
+  m_Name: 
+  brickType: {fileID: 11400000, guid: f76b80e876f38844887b010944b83c75, type: 2}
+  weakBrickX: 1
+  weakBrickY: 5
+--- !u!65 &175871748
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: adc6cc7fc6cce2140b5f7c4b057e27de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  m_GameObject: {fileID: 175871745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &175871749
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: adc6cc7fc6cce2140b5f7c4b057e27de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  m_GameObject: {fileID: 175871745}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &175871750
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+  m_PrefabInternal: {fileID: 1018718941}
+  m_GameObject: {fileID: 175871745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.9525337, y: 4.94702625, z: 19.7968483}
+  m_LocalScale: {x: 4, y: 7, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &176709678
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,9 +1048,13 @@ MonoBehaviour:
   yOffset: 0
   leftStick: {x: 0, y: 0}
   rightStick: {x: 0, y: 0}
-  controllerPosition: {x: 0, y: 0, z: 0}
+  handWorldPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 332494046}
   dynamicCollider: {fileID: 0}
+  wallPushOut: .0500000007
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &335119875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,60 +1632,6 @@ Transform:
   m_LocalScale: {x: 2.72857189, y: 14.7531309, z: 53.1522751}
   m_Children: []
   m_Father: {fileID: 425466748}
---- !u!1 &403788706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 403788707}
-  - 65: {fileID: 403788708}
-  - 114: {fileID: 403788709}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &403788707
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 403788706}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.416172, y: 1.8880167, z: 19.8464737}
-  m_LocalScale: {x: 4, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!65 &403788708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 403788706}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &403788709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 403788706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde1aed875305ec42a3900510bbbee03, type: 3}
-  m_Name: 
-  brickType: {fileID: 11400000, guid: f76b80e876f38844887b010944b83c75, type: 2}
-  wallSize: {x: 5, y: 7}
-  weakBrickX: 3
-  weakBrickY: 5
 --- !u!1 &415624749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,6 +4361,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &1018718941
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 40.9525337
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.94702625
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 19.7968483
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: weakBrickX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+      propertyPath: weakBrickY
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: adc6cc7fc6cce2140b5f7c4b057e27de, type: 2}
+  m_RootGameObject: {fileID: 175871745}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1049273749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,6 +4867,7 @@ MonoBehaviour:
   backwardsMultiplier: .800000012
   strafeMultiplier: .800000012
   turnSpeed: 4
+  playerCamera: {fileID: 0}
 --- !u!143 &1129051656
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4883,7 +4974,7 @@ MonoBehaviour:
   target: {fileID: 1513692863}
   elbowTarget: {fileID: 1112836574}
   IsEnabled: 1
-  debug: 1
+  debug: 0
   transition: 1
 --- !u!1 &1165094777
 GameObject:
@@ -5715,7 +5806,7 @@ MonoBehaviour:
   target: {fileID: 335119872}
   elbowTarget: {fileID: 236991905}
   IsEnabled: 1
-  debug: 1
+  debug: 0
   transition: 1
 --- !u!1 &1423335471
 GameObject:
@@ -6079,9 +6170,13 @@ MonoBehaviour:
   yOffset: 0
   leftStick: {x: 0, y: 0}
   rightStick: {x: 0, y: 0}
-  controllerPosition: {x: 0, y: 0, z: 0}
+  handWorldPosition: {x: 0, y: 0, z: 0}
   skeletalHand: {fileID: 1880370212}
   dynamicCollider: {fileID: 0}
+  wallPushOut: .0500000007
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1513692866
 MonoBehaviour:
   m_ObjectHideFlags: 0
