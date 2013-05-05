@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: hand
-  m_Shader: {fileID: 3, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 12, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -17,6 +17,20 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: ab2f2c408a8d3b34faee68658c2f6739, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 1d22c19d914501a40b8508026609fa6b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 2800000, guid: c5d69e8d03b7b2141b43f9823e06fe0e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -43,8 +57,12 @@ Material:
     m_Floats:
       data:
         first:
+          name: _EmissionLM
+        second: 0
+      data:
+        first:
           name: _Shininess
-        second: .10446693
+        second: .112050205
       data:
         first:
           name: _Glossiness
@@ -65,11 +83,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .805970132, g: .805970132, b: .805970132, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .425373137, g: .710677445, b: 1, a: 1}
+        second: {r: .523780406, g: .630541384, b: .738806009, a: 1}
       data:
         first:
           name: _ReflectColor

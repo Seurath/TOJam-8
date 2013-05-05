@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: OVRLensCorrection_CA
-  m_Shader: {fileID: 4800000, guid: b68ccfe3d17967947860ace59ee5d979, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0851d20900b94ca408d217c8f3c91c6c, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
