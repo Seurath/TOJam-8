@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ef2b4a790c93d04d99770969e6ef70e
+guid: dc048c2ba1ce67647bdaa1f28885e51c
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -49,9 +49,12 @@ ModelImporter:
     400040: connectBone010
     400042: //RootNode
     400044: wristBone001
+    2300000: Box006
+    3300000: Box006
     4300000: Box006
-    7400000: Take 001
+    7400000: unfist
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Box006
   materials:
     importMaterials: 1
@@ -65,11 +68,32 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-    clipAnimations: []
+    clipAnimations:
+    - name: unfist
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: .100000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -103,5 +127,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 1
   userData: 

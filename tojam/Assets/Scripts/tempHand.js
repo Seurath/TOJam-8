@@ -5,6 +5,7 @@ private var  plugin: RazerHydraPlugin = new RazerHydraPlugin();
 
 var id : int;
 var player : GameObject;
+var hand   : GameObject;
 
 var zOffset : float;
 var yOffset : float;
@@ -53,10 +54,14 @@ function Update () {
 	if(plugin.data.trigger >= 254 && !trigger){
 		trigger = true;
 		
-		//if(!shoulderSet){
+		if(!shoulderSet){
 			zOffset = plugin.data.pos.z * .005;
 			shoulderSet = true;
-		//}
+		}
+		
+		if(shoulderSet){
+			hand.animation.Play("fist");
+		}
 		//if the ik IS NOT setup yet--------------------------------------------------------------------
 		/*if(!ikSetup){
 			
@@ -99,8 +104,9 @@ function Update () {
 	
 //IF THE TRIGGER IS RELEASED
 	
-	if(trigger && plugin.data.trigger < 10){
+	if(trigger && plugin.data.trigger < 10 && shoulderSet){
 		trigger = false;
+		hand.animation.Play("unfist");
 	}
 
 
