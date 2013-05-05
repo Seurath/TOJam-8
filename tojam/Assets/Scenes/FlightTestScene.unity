@@ -10377,17 +10377,11 @@ MonoBehaviour:
   xboxMode: 0
   Thrust: 350
   liftStrength: 5000
-  rollRate: 0
+  rollRate: 50
   pitchRate: 400
   turnTorque: 0
   yawRate: -400
   reorientRate: 0
-  horizontalAxis: 0
-  verticalAxis: 0
-  yawAxis: 0
-  leftY: 0
-  rightY: 0
-  throttle: 0
   pitchLowerLimit: -15
   pitchUpperLimit: 15
   rollLowerLimit: 0
@@ -14959,6 +14953,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
       propertyPath: Thrust
       value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
+      propertyPath: rollRate
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82c13746c8ec07d479353bdf4d564c72, type: 2}
