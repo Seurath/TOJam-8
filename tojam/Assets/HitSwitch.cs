@@ -20,9 +20,11 @@ public class HitSwitch : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if(switchEnabled && messageRecipient != null)
+		if(enabled && switchEnabled && messageRecipient != null)
 		{
+			Debug.Log ("HIT");
 			messageRecipient.BroadcastMessage(switchHitMessage);
+			enabled = false;
 		}
 	}
 	
