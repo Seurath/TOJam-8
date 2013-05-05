@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hand : MonoBehaviour {
-	private RazerHydraPlugin plugin = null;
-	
 	public bool useHydra = true;
 	
 	public int id;
@@ -13,16 +11,21 @@ public class Hand : MonoBehaviour {
 	public float yOffset;
 	
 	private bool triggerDown = false;
+	private bool shoulderSet = false;
 	
 	public Vector2 leftStick;
 	public Vector2 rightStick;
+	
+	public Vector3 controllerPosition;
+	
+	public GameObject skeletalHand;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	void Start(){
 		if(useHydra)
 		{
-			plugin = new RazerHydraPlugin();
+			SixenseInput.ControllerManagerEnabled = false;
 		}
 		else
 		{
@@ -39,39 +42,49 @@ public class Hand : MonoBehaviour {
 		// For use with hydra controller
 		if(useHydra)
 		{
-			//get latest data from tracker
-			plugin._sixenseGetNewestData(id);
-		
-			//tracker data=======================================================================================	
-		
 			//position data
+			SixenseInput.Controller controller = SixenseInput.Controllers[id];
+			controllerPosition = controller.Position;
 			transform.localPosition = new Vector3(
-												plugin.data.pos.x * .005f,
-												(plugin.data.pos.y * .005f) + yOffset,
-												(plugin.data.pos.z * -.005f) + zOffset);
+												controllerPosition.x * .005f,
+												(controllerPosition.y * .005f) + yOffset,
+												(controllerPosition.z * .005f) - zOffset);
+				
 			//rotation data
 			transform.localRotation = new Quaternion(
-												plugin.data.rotQuat.x *-1,
-												plugin.data.rotQuat.y *-1,
-												plugin.data.rotQuat.z,
-												plugin.data.rotQuat.w);
+												controller.Rotation.x,
+												controller.Rotation.y,
+												controller.Rotation.z,
+												controller.Rotation.w);
 			
-			if(plugin.data.trigger >= 254 && !triggerDown){
+			if(controller.Trigger >= 0.9 && !triggerDown) {
 				triggerDown = true;
 				
 				// Allow the user to set the base position by pressing the trigger
-				zOffset = plugin.data.pos.z * .005f;
+				if(!shoulderSet)
+				{
+					zOffset = controllerPosition.z * .005f;
+					shoulderSet = true;
+				}
+				else if(skeletalHand != null)
+				{
+					skeletalHand.animation.Play("fist");
+				}
 			}
-			else if(triggerDown && plugin.data.trigger < 10){
+			else if(triggerDown && controller.Trigger < 0.05) {
 				triggerDown = false;
+				if(skeletalHand != null)
+				{
+					skeletalHand.animation.Play ("unfist");
+				}
 			}
 			
 			// Send analog stick values to the player, for movement purposes
 			if(id == 0) {
-				leftStick = new Vector2((plugin.data.joystick_x - 127) / 127.0f, (plugin.data.joystick_y - 127) / 127.0f);
+				leftStick = new Vector2(controller.JoystickX, controller.JoystickY);
 			}
 			else if(id == 1) {
-				rightStick = new Vector2((plugin.data.joystick_x - 127) / 127.0f, (plugin.data.joystick_y - 127) / 127.0f);
+				rightStick = new Vector2(controller.JoystickX, controller.JoystickY);
 			}
 		}
 		else // For use with an xbox controller

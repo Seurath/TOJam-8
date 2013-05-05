@@ -34,7 +34,15 @@ public class WallBrick : MonoBehaviour {
 		renderer.material.color = weakColor;
 	}
 	
-	public void Punched()
+	void OnCollisionEnter(Collision collisionInfo)
+	{
+		if(collisionInfo.gameObject.CompareTag("Fist"))
+		{
+			Punched ();
+		}
+	}
+	
+	private void Punched()
 	{
 		if(isWeak && rigidbody.isKinematic)
 		{
