@@ -260,11 +260,7 @@ MonoBehaviour:
   WireMode: 0
   LensCorrection: 1
   Chromatic: 1
-  BackgroundColor:
-    r: .192000002
-    g: .301999986
-    b: .474999994
-    a: 1
+  BackgroundColor: {r: .192000002, g: .301999986, b: .474999994, a: 1}
   NearClipPlane: .150000006
   FarClipPlane: 1000
 --- !u!114 &11400006
@@ -294,8 +290,8 @@ MonoBehaviour:
   _ScaleIn: {x: 1, y: 1}
   _Scale: {x: 1, y: 1}
   _HmdWarpParam: {x: 1, y: 0, z: 0, w: 0}
-  _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
   material_CA: {fileID: 2100000, guid: 700ec7db7ac6ff24f9f4a3d4cd157910, type: 2}
+  _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,8 +307,8 @@ MonoBehaviour:
   _ScaleIn: {x: 1, y: 1}
   _Scale: {x: 1, y: 1}
   _HmdWarpParam: {x: 1, y: 0, z: 0, w: 0}
-  _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
   material_CA: {fileID: 2100000, guid: 700ec7db7ac6ff24f9f4a3d4cd157910, type: 2}
+  _ChromaticAberration: {x: .995999992, y: .991999984, z: 1.01400006, w: 1.01400006}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

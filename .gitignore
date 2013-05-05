@@ -12,6 +12,7 @@
 /tojam/Assembly-CSharp-firstpass.csproj
 /tojam/Assembly-UnityScript-vs.unityproj
 /tojam/Assembly-UnityScript.unityproj
-tojam/Assembly-CSharp.pidb
-tojam/Assets/Animations.meta
-tojam/Assets/IK/Materials.meta~HEAD.meta
+/tojam/Assembly-CSharp-Editor.pidb
+/tojam/Assembly-CSharp-firstpass.pidb
+/tojam/Assembly-CSharp.pidb
+/tojam/Assembly-UnityScript.pidb
