@@ -4,20 +4,14 @@ using System.Collections.Generic;
 
 public class HandGrab : MonoBehaviour {
 	
+	[SerializeField] private AudioSource grabSound;
+	
 	public List<Transform> itemsInReach = new List<Transform>();
 	public List<Transform> heldItems = new List<Transform>();
 	
 	public LayerMask[] ungrabbable;
 	
-	// Use this for initialization
-	void Start () {
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	
 	public void GrabItems()
 	{
@@ -30,6 +24,7 @@ public class HandGrab : MonoBehaviour {
 				{
 					joint.connectedBody = rigidbody;
 					heldItems.Add (item);
+					PlayGrabSound();
 				}
 			}
 		}
@@ -68,5 +63,11 @@ public class HandGrab : MonoBehaviour {
 	void OnTriggerExit(Collider other)
 	{
 		itemsInReach.Remove (other.transform);
+	}
+	
+	private void PlayGrabSound ()
+	{
+		if (this.grabSound == null) { return; }
+		this.grabSound.Play(); 
 	}
 }
